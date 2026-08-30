@@ -1,0 +1,74 @@
+media:
+  - name: covers
+    label: Cover Artwork
+    input: media/covers
+    output: /media/covers
+    categories: [image]
+    rename: safe
+
+  - name: audio
+    label: Audio
+    input: media/audio
+    output: /media/audio
+    categories: [audio]
+    rename: safe
+
+content:
+  - name: songs
+    label: Songs
+    type: collection
+    path: content/songs
+    fields:
+      - name: title
+        label: Song Title
+        type: string
+        required: true
+
+      - name: cover
+        label: Cover Artwork
+        type: image
+        options:
+          media: covers
+
+      - name: audio
+        label: Audio Recording
+        type: file
+        options:
+          media: audio
+          categories: [audio]
+
+      - name: lyrics
+        label: Lyrics
+        type: rich-text
+        options:
+          media: false
+
+      - name: scripture
+        label: Scripture References
+        type: text
+
+      - name: devotional
+        label: Devotional
+        type: rich-text
+        options:
+          media: false
+
+      - name: background
+        label: Background / Study Notes
+        type: rich-text
+        options:
+          media: false
+
+      - name: categories
+        label: Categories
+        type: string
+        list: true
+
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+
+      - name: copyright
+        label: Copyright
+        type: string
